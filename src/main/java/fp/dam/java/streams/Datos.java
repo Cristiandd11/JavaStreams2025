@@ -12,7 +12,7 @@ public class Datos {
 	 *   Retorna una secuencia con todas las palabras de la lengua Española.
 	 *  ----------------------------------------------------------------------------------------------------------------
 	 */
-	static Stream<String>getPalabras() {
+	static Stream<String> getPalabras() {
 		try {
 			Path path = Path.of(BloqueA.class.getResource("/palabras.txt").toURI());
 			return Files.lines(path);
