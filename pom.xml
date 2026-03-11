@@ -3,4 +3,16 @@
   <groupId>fp.dam.java.streams</groupId>
   <artifactId>javastreams</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  <dependencies>
+  
+  	<dependency>
+	    <groupId>com.google.code.gson</groupId>
+	    <artifactId>gson</artifactId>
+	    <version>2.13.2</version>
+	    <scope>compile</scope>
+	</dependency>
+  
+  </dependencies>
+  
 </project>
