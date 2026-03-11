@@ -4,6 +4,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 import fp.dam.java.streams.libros.Autor;
 import fp.dam.java.streams.libros.Libro;
@@ -23,6 +24,21 @@ public class Ejemplos {
 		// Almacenar en un conjunto el nombre de los autores sin repetir (crear al menos
 		// dos stream pipelines distintos) y mostrarlo en la consola.
 		
+		Set<String> autores2 = libros
+				.stream()
+				.map(libro -> libro.getAutor().getNombre())
+				.collect(Collectors.toSet());
+		
+		Set<String> autores3 = libros
+				.stream()
+				.map(libro -> libro.getAutor().getNombre())
+				.collect(Collectors.toCollection(TreeSet::new));
+		
+		Set<String> autores4 = libros
+				.stream()
+				.map(Libro::getAutor)
+				.map(Autor::getApellidosNombre)
+				.collect(Collectors.toCollection(TreeSet::new));
 		
 	}
 
