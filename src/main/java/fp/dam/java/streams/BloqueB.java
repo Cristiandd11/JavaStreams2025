@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import static java.util.stream.Collectors.*;
+
+import java.util.Arrays;
 import java.util.stream.Stream;
 
 
@@ -55,7 +57,9 @@ public class BloqueB {
 	 */
 	
 	static List<String> ejercicio05(Stream<String> secuencia) {
-		return null;
+		return secuencia
+				.flatMap(s -> Arrays.stream(s.split("\\p{L}+|\\P{L}+")))
+				.toList();
 	}
 	
 	/*
